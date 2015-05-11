@@ -21,3 +21,5 @@ Clean procedure :<br>
    $cd build<br>
    $make clean<br>
 <br>
+
+http://njiot.blogspot.tw/2015/05/ameba-helloworld-example.html
