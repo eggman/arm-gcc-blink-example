@@ -1,7 +1,8 @@
 # arm-gcc-blink-example <br>
 A simple blink example by using ARM gcc for Ameba dev. board<br>
 <br>
-Work on Windows Cygwin evironment, can port onto Linux <br>
+Work on Linux <br>
+   fix for linux by eggman
 <br>
 toolchain : ARM GCC <br>
      https://launchpad.net/gcc-arm-embedded <br>
@@ -23,3 +24,4 @@ Clean procedure :<br>
 <br>
 
 http://njiot.blogspot.tw/2015/05/ameba-helloworld-example.html
+
