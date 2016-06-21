@@ -21,7 +21,7 @@
 ARM_GCC_TOOLCHAIN=../tools/gcc-arm-none-eabi-4.8.3-2014q1/bin
 
 
-CROSS_COMPILE = $(ARM_GCC_TOOLCHAIN)/arm-none-eabi-
+CROSS_COMPILE = arm-none-eabi-
 
 
 

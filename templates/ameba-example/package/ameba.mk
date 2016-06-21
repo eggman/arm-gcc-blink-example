@@ -117,7 +117,7 @@ helloworld: $(addprefix $(OUTPUT_PATH)/, $(C_OBJ)) $(addprefix $(OUTPUT_PATH)/, 
 	$(CC) $(ELF_FLAGS) -o target.axf -Wl,--start-group $^ -Wl,--end-group $(ELF_LDLIBS)
 	mv *.i $(OUTPUT_PATH)/
 	mv *.s $(OUTPUT_PATH)/
-	cd ./makebin && /usr/bin/sh ./makebin.sh
+	cd ./makebin && /bin/bash ./makebin.sh
 
 
 build_info.h:
