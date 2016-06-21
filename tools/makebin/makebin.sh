@@ -1,4 +1,4 @@
-###!/bin/sh
+###!/bin/bash
 
 TOOLCHAIN=../../tools/gcc-arm-none-eabi-4.8.3-2014q1/bin/arm-none-eabi
 
@@ -65,34 +65,34 @@ ${TOOLCHAIN}-objcopy -j .ram.start.table -j .ram_image1.text \
 ${TOOLCHAIN}-objcopy -j .image2.start.table -j .ram_image2.text -j .ram.data \
 -Obinary  ./target_pure.axf ./ram_2.bin
 
-${TOOLCHAIN}-nm.exe target.axf | sort > target.map
+${TOOLCHAIN}-nm target.axf | sort > target.map
 
-${TOOLCHAIN}-objdump.exe -d target.axf > target.asm
+${TOOLCHAIN}-objdump -d target.axf > target.asm
 
 ./prepend_header.sh ./ram_1.bin __ram_image1_text_start__ ./target.map 0
 ./prepend_header.sh ./ram_2.bin __ram_image2_text_start__ ./target.map
 cat ./ram_1_prepend.bin ./ram_2_prepend.bin > ./ram_all.bin
 
 
-mbed_disk=100
-while [[ $mbed_disk -le 122 ]] 
-do
-    
-    diskname=`chr $mbed_disk`
-    filename="/cygdrive/$diskname/mbed.htm"
-    if [ -f $filename ];
-    then
-        break
-    fi
-    mbed_disk=$((mbed_disk+1))
-done
+#mbed_disk=100
+#while [[ $mbed_disk -le 122 ]] 
+#do
+#    
+#    diskname=`chr $mbed_disk`
+#    filename="/cygdrive/$diskname/mbed.htm"
+#    if [ -f $filename ];
+#    then
+#        break
+#    fi
+#    mbed_disk=$((mbed_disk+1))
+#done
 
 
-if [[ $mbed_disk -le 122 ]];
-then 
-  echo cp ./ram_all.bin /cygdrive/$diskname/
-  cp ./ram_all.bin /cygdrive/$diskname/
-else
-  echo mbed usb disk not found
-fi
+#if [[ $mbed_disk -le 122 ]];
+#then 
+#  echo cp ./ram_all.bin /cygdrive/$diskname/
+#  cp ./ram_all.bin /cygdrive/$diskname/
+#else
+#  echo mbed usb disk not found
+#fi
 
