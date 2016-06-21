@@ -1,6 +1,6 @@
 ###!/bin/bash
 
-TOOLCHAIN=../../tools/gcc-arm-none-eabi-4.8.3-2014q1/bin/arm-none-eabi
+TOOLCHAIN=arm-none-eabi
 
 
 chr() {
